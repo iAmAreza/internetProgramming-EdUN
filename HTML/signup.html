@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Signup Form</title>
+    <link rel="stylesheet" href="../CSS/all.min.css" />
+    <link rel="stylesheet" href="../CSS/signupStyle.css" />
+  </head>
+  <body>
+  
+
+    <div class="container-1" id="container-1">
+      <div class="form-container-1 sign-up-container-1">
+       
+        <form action="#">
+          <h1>Create Account</h1>
+          <div class="social-container-1">
+            <a href="#" class="social-1"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-1"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-1"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span>or use your email for registration</span>
+          <div class="input-content">
+            <span>
+              <i class="fa-solid fa-user hello-user"></i>
+              <input type="text" placeholder="Name" id="userName" />
+              <p class="para1" id="paragraph">You have entered invalid name</p>
+            </span>
+            <span>
+              <i class="fa-solid fa-envelope hello-user"></i>
+              <input type="email" placeholder="Email" id="mymail" />
+            </span>
+            <span>
+              <i class="fa-solid fa-lock hello-user"></i>
+              <input type="password" placeholder="Password" id="pass" />
+            </span>
+            <span>
+              <i class="fa-solid fa-lock hello-user"></i>
+              <input
+                type="password"
+                placeholder="Confirm-Password"
+                id="confirmPass"
+              />
+              <p class="para" id="takepara">Password not match</p>
+            </span>
+          </div>
+
+          <button id="signBtn">Sign Up</button>
+        </form>
+      </div>
+      <div class="form-container-1 sign-in-container-1">
+        <form action="#">
+          <h1>Sign in</h1>
+          <div class="social-container-1">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span class="signInSpan">or use your account</span>
+          <span class="sign-in-span">
+            <i class="fa-solid fa-user hello-user"></i>
+            <input type="email" placeholder="Email" />
+          </span>
+          <span class="sign-in-span">
+            <i class="fa-solid fa-lock hello-user"></i>
+            <input type="password" placeholder="Password" />
+          </span>
+
+          <a href="#">Forgot your password?</a>
+          <button type="button">Sign In</button>
+        </form>
+      </div>
+      <div class="overlay-container-1">
+        <div class="overlay-1">
+          <div class="overlay-panel-1 overlay-left-1">
+            <h1>Welcome Back!</h1>
+            <p>
+              To keep connected with us please login with your personal info
+            </p>
+            <button class="ghost" id="signIn">Sign In</button>
+          </div>
+          <div class="overlay-panel-1 overlay-right-1">
+            <h1>Hello, Friend!</h1>
+            <p>Enter your personal details and start journey with us</p>
+            <button class="ghost" id="signUp">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../JS/script.js"></script>
+  </body>
+</html>
