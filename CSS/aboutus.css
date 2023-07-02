@@ -1,0 +1,86 @@
+.about-us-heading {
+  background-color: #5fcf80;
+  height: 25vh;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  border-radius: 10px; 
+  box-shadow: 4px 4px 4px gray;
+}
+.about-us-heading-content {
+  position: absolute;
+  margin-top: 4vh;
+}
+.about-us-heading-content > .about-us-paragraph {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.comment-container {
+  margin-top: 100px;
+}
+.comment-container .line-course h5 {
+  letter-spacing: 5px;
+}
+.comment-container .heading-popular-course {
+  word-spacing: 5px;
+  color: rgba(0, 0, 0, 0.746);
+}
+.whatTheySay {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  margin-top: -30px;
+  margin-bottom: -40px;
+}
+.what-they-say-content {
+  background: #bab5b510;
+}
+.testimonials {
+  max-width: 1000px;
+  padding: 0 15px 50px;
+  /* margin: 0 auto 80px auto;  */
+
+  margin-left: 150px;
+  margin-top: 50px;
+}
+.single-item {
+  background: #fff;
+  color: #111;
+  padding: 15px;
+  margin: 50px 15px;
+}
+.profile {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.img-area {
+  margin: 0 15px 15px 15px;
+}
+.img-area img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 7px solid #2d7d44;
+}
+.hellocontent {
+  font-size: 18px;
+}
+.hellocontent p {
+  text-align: justify;
+}
+.hellocontent p span {
+  font-size: 48px;
+  margin-right: 10px;
+  color: #2d7d44;
+}
+.socials i {
+  margin-right: 25px;
+}
+.bio h4 {
+  font-family: "Berkshire Swash", cursive;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-color: #2d7d44;
+}

@@ -1,0 +1,179 @@
+
+
+ul {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+
+.logo a {
+    color: #5fcf80;
+    font-size: 35px;
+    line-height: 1;
+    font-weight: 650;
+    letter-spacing: 1px;
+    /* text-transform: uppercase; */
+    font-family: "Poppins", sans-serif;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 5px;
+    margin-top: 0px;
+}
+
+.menu li a {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 501;
+    color: #37423b;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.menu li a:hover,
+.dropdown-bar a:hover {
+    color: #5fcf80;
+}
+
+.dropdown {
+    /* display: inline; */
+    position: relative;
+}
+
+.dropdown-bar {
+    position: absolute;
+    overflow: hidden;
+    list-style-type: none;
+    background-color: white;
+    display: none; 
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    opacity: 0;
+    transition-duration: 0.4s;
+}
+
+.dropdown:hover .dropdown-bar {
+    display: block;
+    top: 10px; 
+    opacity: 1;
+}
+
+.dropdown-bar li {
+    padding: 18px 70px 18px 15px;
+}
+
+.menu button {
+    background: #5fcf80;
+    color: #fff;
+    margin-top: -9px;
+    padding-right: 31px;
+    padding-left: 31px;
+    border-radius: 50px;
+    transition: 0.3s;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    border: none;
+}
+
+.menu button:hover {
+    background-color: #3ac162;
+    cursor: pointer;
+}
+.container {
+    background-color: #5fcf80;
+    display: flex;
+    margin-top: 75px;
+    justify-content: center;
+}
+
+.box {
+    width: 60%;
+    padding: 33px 0px 33px 0px;
+    color: white;
+}
+
+.box h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+    font-family: Raleway, sans-serif;
+}
+
+.box p {
+    text-align: center;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    color: #fff;
+    line-height: 1.5;
+    margin-top: 5px;
+    padding: 0px 113px;
+}
+.courses{
+    margin: 60px 80px 120px 75px;
+    position: relative;
+    animation: slide 1.5s ease-out
+}
+@keyframes slide{
+    from{top: 100px; opacity: 0}
+    to {top: 0px; opacity: 1}
+}
+.event1, .event2{
+    overflow: hidden;
+}
+.img{
+    display: flex;
+    height: 423px;
+    justify-content: space-evenly;
+}
+.img img{
+    width: 636px;
+    box-sizing: border-box;
+    transition: transform 0.3s;
+}
+.details{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    margin-top: -60px;
+}
+.details1, .details2{
+    transition: 0.3s;
+    text-align: center;
+    width: 576px;
+    height: 244px;
+    background-color: #fff;
+    border-top: 5px solid #fff;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+.details a{
+    color:#37423b;
+    transition: 0.3s;
+    font-family: "Raleway",
+        sans-serif;
+    font-size: 1.25rem;
+}
+.details h2{
+    margin: 35px 0px 20px 0px;
+}
+.details p{
+    font-family: "Open Sans", sans-serif;
+    margin: 0px 30px 20px 30px;
+    text-align: left;
+    color: #5e5e5e;
+    font-family: "Open Sans",
+        sans-serif;
+    line-height: 1.5rem;
+}
+.details .time{
+    text-align: center;
+    font-style: italic;
+
+}

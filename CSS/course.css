@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,800;1,300&family=Raleway:wght@400;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+.nav-color {
+  background-color: #ffffff;
+}
+.heading {
+  margin-left: 20rem;
+}
+.heading-primary {
+  padding: 0.5rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.nav-heading {
+  margin-left: 4rem;
+}
+.nav-a {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #5fcf80;
+}
+.nav-a:hover {
+  color: #5fcf80;
+}
+.start-button {
+  background-color: #5fcf80;
+  color: #ffffff;
+  padding-left: 1.5rem;
+  padding-right: 1.8rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 20px;
+  font-size: 18px;
+}
+.start-button:hover {
+  background-color: #12642b;
+  color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+.start-button:not(:hover) {
+  background-color: #5fcf80;
+  color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+.nav-link {
+  color: black;
+}
+.get-started-button {
+  margin-right: 4rem;
+}
+
+.nav-link:hover {
+  color: #5fcf80;
+  transition: all 0.3s ease-in-out;
+}
+.home {
+  color: #5fcf80;
+}
+
+.about-course-heading{
+    background-color: #5fcf80; 
+    height: 25vh; 
+    color: #fff; 
+    text-align: center;  
+    position: relative; 
+    border-radius: 10px; 
+    box-shadow: 4px 4px 4px gray;
+} 
+.about-course-heading-content{
+    position: absolute; 
+    margin-top: 4vh;
+}
+.about-course-heading-content >.about-course-paragraph{
+   margin-left: 100px; 
+   margin-right: 100px;
+} 
+
+.course-card-body{
+    margin-bottom: 25px;
+}
+
+.col2>ul>li>a{
+    color: #000;
+}
+.col3>ul>li>a{
+    color: #000;
+}

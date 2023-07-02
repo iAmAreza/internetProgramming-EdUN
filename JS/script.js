@@ -70,7 +70,3 @@ document.getElementById('signBtn').addEventListener('click',()=>{
 		window.alert('Sorry ! You have enter invalid information')
 	}
 })
-
-// it is javascript for sign up and sign in  
-
-// okay lets see the output 

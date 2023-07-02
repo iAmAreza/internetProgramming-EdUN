@@ -1,0 +1,99 @@
+
+iframe{
+    width: 100%; 
+    height: 500px;
+    filter: invert(100%);
+}
+.about-us-heading{
+    margin-bottom: 5px;
+} 
+body{
+    height: 1600px;
+} 
+
+.input-box > input{
+    display: inline-block;
+}
+
+.subject-other > input{
+    display: block;
+}
+
+.address-place{
+    display: flex; 
+    flex-direction: column;
+}
+
+.location{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 18px; 
+    margin-bottom: 10px;
+} 
+
+.location-content{
+    display: flex; 
+    flex-direction: column;
+}
+.email{
+    display: flex; 
+    align-items: center; 
+    gap: 20px;
+}
+
+.call{
+    display: flex; 
+    align-items: center; 
+    gap: 15px;
+}
+
+
+.mailing {
+    display: flex; 
+    justify-content: space-between;
+} 
+
+
+.my-address{
+    margin-top: 20px;
+}  
+
+.input-box > input {
+    width: 400px; 
+    padding: 15px; 
+    margin-left: 10px; 
+    margin-bottom: 10px;
+}  
+
+.subject-other > input{
+    width: 815px; 
+    margin-left: 10px; 
+    padding: 15px; 
+    margin-bottom: 10px;
+} 
+
+.subject-other > textarea{
+    height: 200px; 
+    margin-left: 10px; 
+    width: 815px;
+}
+.mail-box{
+    margin-right: -40px;
+} 
+
+.send-message>button{
+    margin-top: 10px; 
+    margin-left: 350px;
+    padding: 15px;
+    background-color: #5fcf80; 
+    color: white; 
+    border: 0; 
+    border-radius: 3px; 
+    font-size: 20px; 
+    transition: all 0.5s;
+}  
+
+button:hover{
+    background-color: #117d32;
+}

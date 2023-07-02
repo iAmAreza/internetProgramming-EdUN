@@ -1,11 +1,3 @@
-document.getElementById('my-get-button').addEventListener('click', ()=>{
-    window.open('http://localhost:5500/HTML/signup.html',"_self"); 
-}); 
-
-document.getElementById('my-get-button-2').addEventListener('click', ()=>{
-    window.open('http://localhost:5500/HTML/signup.html', "_self"); 
-}); 
-
 var studentFunction = setInterval(studentFunc, 1); 
 let count1 = 1; 
 function studentFunc() {
