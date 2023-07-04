@@ -1,9 +1,9 @@
 document.getElementById('my-get-button').addEventListener('click', ()=>{
-    window.open('http://localhost:5500/HTML/signup.html',"_self"); 
+    window.open(document.location.origin+'/HTML/signup.html',"_self");
 }); 
 
 document.getElementById('my-get-button-2').addEventListener('click', ()=>{
-    window.open('http://localhost:5500/HTML/signup.html', "_self"); 
+    window.open(document.location.origin+'/HTML/signup.html', "_self");
 }); 
 
 var studentFunction = setInterval(studentFunc, 1); 
@@ -44,4 +44,37 @@ function trainerFunc() {
    if(count4 >= 15) {
     clearInterval(trainerFunction); 
    }
+}
+async function onHTMLFileLoaded(){
+    // This function is called when the HTML file is loaded
+    try {
+        const res = await fetch("http://127.0.0.1:3000/auth/validate_token", {
+            method: "POST",
+            body: JSON.stringify({
+                token: JSON.parse(localStorage.getItem("access_token")),
+            }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        const data = await res.json();
+        // console.log(data);
+        if(data.error===true){
+            let dashboard_button = document.getElementById("dashboard_button");
+            dashboard_button.disabled = true;
+        }
+        if(data.error===false){
+
+            let get_started_button = document.getElementById("my-get-button");
+            let get_started_button_2 = document.getElementById("my-get-button-2");
+            get_started_button.innerHTML = "Logout";
+            get_started_button.style.backgroundColor = "red";
+            get_started_button.onclick= function(){
+                localStorage.removeItem("access_token");
+                window.location.reload()
+            }
+        }
+    } catch (error) {
+        console.log(error);
+    }
 }

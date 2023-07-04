@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../CSS/homeStyle.css"> 
     <link rel="stylesheet" href="../CSS/all.min.css">
 </head>
-<body>
+<body onload="onHTMLFileLoaded()">
        <!-- navigation Bar start  -->
        <nav class="navbar navbar-expand-lg bg-body-tertiary nav-color" data-aos="fade-up">
         <div class="container-fluid nav-heading">
@@ -43,12 +43,11 @@
               </li>
             </ul>
             <div class="get-started-button">
-              <button type="button" class="btn start-button rounded-pill" disabled>Dashboard</button>
+              <button type="button" class="btn start-button rounded-pill" id="dashboard_button">Dashboard</button>
                 
           </div>
             <div class="get-started-button">
                 <button type="button" class="btn start-button rounded-pill" id="my-get-button">Get Started</button>
-                  
             </div>
           </div>
         </div>
@@ -64,7 +63,7 @@
           <h1 class="heading-content">Learning Today,</h1>
           <h1 class = "heading-content">Leading Tommorow</h1>
           <h4 class="light-heading-content my-4">Here is one of the best platforms to make Programming very much easier for our students</h4> 
-          <button " class="button-style" id="my-get-button-2">Get Started</button>
+          <button  class="button-style" id="my-get-button-2">Get Started</button>
         </div>
         
       </div>
