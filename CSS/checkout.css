@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,800;1,300&family=Raleway:wght@400;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+body {
+  font-family: 'Raleway', sans-serif; 
+  background-image: linear-gradient(
+    to right,
+    rgb(2, 74, 47),
+    rgba(4, 170, 109)
+  );
+}
+.dropdown{
+    margin-top: 50px;
+    margin-left: 20px;
+} 
+.chekout-heading {
+  margin: 10px 10px;  
+  color: #FFF;
+} 
+.checkout-heading-1{
+  margin-top: 50px;
+} 
+option img{
+  width: 20%;
+  display: block; 
+  background: #000;
+} 
+label img{
+  width: 8%; 
+} 
+.form-check{
+  border: 1px solid rgb(4, 170, 109); 
+  width: 25%;
+} 
+p{
+  color: #FFF;
+}  
+.mypara{
+  font-size: 18px;
+} 
+.my-whole-chekcout{
+  position: relative;
+}
+.summary{
+ 
+  position: absolute; 
+  top: 10px; 
+  left: 850px; 
+  width: 500px; 
+}
+span{
+  font-size: 18px;
+}
+.money-margin{
+  margin-left: 200px;
+} 
+.money-margin-1{
+  margin-left: 230px;
+} 
+.bar{
+  border: 1px solid #FFF;
+  width: 350px;
+} 
+.checkout-button{
+  background-color: rgb(129, 76, 129); 
+  padding: 15px; 
+  color: white; 
+  font-weight: 800; 
+  box-shadow: none; 
+  margin-left: 80px;
+}
