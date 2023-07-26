@@ -1,0 +1,92 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  email    String   @unique
+  password String
+  profile  Profile? @relation("user profile")
+  courses  Course[]
+}
+
+model Profile {
+  id     Int     @id @default(autoincrement())
+  userId Int     @unique
+  user   User    @relation("user profile", fields: [userId], references: [id])
+  name   String
+  age    Int?
+  bio    String?
+}
+
+model Course {
+  id                 Int      @id @default(autoincrement())
+  name               String
+  description        String?
+  lessons            Lesson[]
+  is_active          Boolean  @default(true)
+  youtube_course_url String?
+  is_youtube_course  Boolean  @default(true)
+  owner_id           Int
+  owner              User     @relation(fields: [owner_id], references: [id])
+}
+
+model Lesson {
+  id                Int       @id @default(autoincrement())
+  name              String
+  youtube_video_url String?
+  description       String?
+  videoTitle        String?
+  videoDescription  String?
+  videoDuration     Int?
+  videoThumbnail    String?
+  problems          Problem[]
+  exams             Exam[]
+  contests          Contest[]
+  courseId          Int
+  course            Course    @relation(fields: [courseId], references: [id])
+}
+
+model Problem {
+  id        Int         @id @default(autoincrement())
+  question  String
+  options   String[]
+  answer    Int
+  type      ProblemType // New field for problem type
+  lessonId  Int
+  lesson    Lesson      @relation(fields: [lessonId], references: [id])
+  Exam      Exam?       @relation(fields: [examId], references: [id])
+  examId    Int?
+  Contest   Contest?    @relation(fields: [contestId], references: [id])
+  contestId Int?
+}
+
+model Exam {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String?
+  date        DateTime
+  problems    Problem[]
+  lessonId    Int
+  lesson      Lesson    @relation(fields: [lessonId], references: [id])
+}
+
+model Contest {
+  id             Int       @id @default(autoincrement())
+  name           String
+  description    String?
+  date           DateTime
+  codingProblems Problem[]
+  lessonId       Int
+  lesson         Lesson    @relation(fields: [lessonId], references: [id])
+}
+
+enum ProblemType {
+  GENERAL
+  CODING
+}

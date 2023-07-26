@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+}
+
+.header {
+    background: #57a958;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 4px;
+    font-family: sans-serif;
+}
+
+#run {
+    background-color: #04AA6D;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    word-spacing: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+#tilt {
+    border: none;
+    cursor: pointer;
+    background-color: #E7E9EB;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+#tilt:hover {
+    background-color: #D1D0CE;
+}
+
+/* .control-panel {
+    background: lightgray;
+    text-align: right;
+    padding: 4px;
+    font-family: sans-serif;
+} */
+/* .container {
+    background-color: #E8E8E8;
+} */
+
+.inOut{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px 20px 10px;
+}
+/* .languages {
+    background: white;
+    border: 1px solid gray;
+} */
+.editor, .output {
+    height: 85vh;
+    width: 49%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.output {
+    background-color: white;
+    overflow: scroll;
+}
+.toggle {
+    flex-direction: column;
+    justify-content: space-around;
+    row-gap: 15px;
+}
+.toggle-editor,
+.toggle-output {
+    width: 100%;
+    height:42vh;
+}
+/* .button-container {
+    text-align: right;
+    padding: 4px;
+}
+
+.btn {
+    background: #57a958;
+    color: white;
+    padding: 8px;
+    border: 0;
+} 
+
+.output {
+    background-color: white;
+    padding: 4px;
+    margin: 15px 10px 15px 10px;
+    min-height: 100px;
+    width: 50%;
+    resize: none;
+}
+*/
