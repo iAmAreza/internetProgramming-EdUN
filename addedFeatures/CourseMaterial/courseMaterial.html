@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./courseMaterial.css">
+    <link rel="stylesheet" href= "Quiz.css">
+</head>
+
+<body onload="on_course_page_load()">
+    <header>
+        <nav>
+            <li class="logo"><a href="#">EdUn</a></li>
+            <ul class="menu">
+                <li><a href="../../HTML/home.html">Home</a></li>
+                <li><a href="../../HTML/aboutus.html">About</a></li>
+                <li><a href="../../HTML/course.html">Courses</a></li>
+                <li><a href="../../HTML/trainers.html">Trainers</a></li>
+                <li><a href="../../HTML/Events.html">Events</a></li>
+                <li><a href="../../HTML/Pricing.html">Pricing</a></li>
+                <li><a href="../../HTML/contact.html">Contact</a></li>
+                <button>Get Started</button>
+            </ul>
+        </nav>
+    </header>
+    <div class="course-topic">
+        <ul class="topic-list">
+            <li onclick = "getCurrent(this)"><a class="topic"
+                    href="http://127.0.0.1:5500/IP/CourseMaterial/courseMaterial.html?course_id=PLm64fbD5OnxuObyOVSxcM0TUcBLDF2w64">HTML</a>
+            </li>
+            <li onclick = "getCurrent(this)"><a class="topic"
+                    href="http://127.0.0.1:5500/IP/CourseMaterial/courseMaterial.html?course_id=PLm64fbD5Onxvj4aifOC8P8U8inUqWzdSH">CSS</a>
+            </li>
+            <li onclick = "getCurrent(this)"><a class="topic" 
+                    href="http://127.0.0.1:5500/IP/CourseMaterial/courseMaterial.html?
+                    course_id=PLHiZ4m8vCp9OkrURufHpGUUTBjJhO9Ghy">Javascript</a></li>
+            <li onclick = "getCurrent(this)"><a class="topic"
+                    href="http://127.0.0.1:5500/IP/CourseMaterial/courseMaterial.html?course_id=PLHiZ4m8vCp9M6HVQv7a36cp8LKzyHIePr">React</a>
+            </li>
+            <li onclick = "getCurrent(this)"><a class="topic"
+                    href="http://127.0.0.1:5500/IP/CourseMaterial/courseMaterial.html?course_id=PL4cUxeGkcC9h77dJ-QJlwGlZlTd4ecZOA">MongoDB</a>
+            </li>
+            <li onclick = "getCurrent(this)"><a class="topic"
+                    href="http://127.0.0.1:5500/IP/CourseMaterial/courseMaterial.html?course_id=PLHiZ4m8vCp9PHnOIT7gd30PCBoYCpGoQM">NodeJS</a>
+            </li>
+            <li onclick = "getCurrent(this)"><a class="topic"
+                    href="http://127.0.0.1:5500/IP/CourseMaterial/courseMaterial.html?course_id=PLwGdqUZWnOp3Vqww2cL5KbDkShj4NMRzk">ExpressJS</a>
+            </li>
+        </ul>
+    </div>
+    
+    
+    
+    <div class = "content-box">
+        <div class="video-container">
+            <h1 id="course_title" class="heading1 heading"></h1>
+
+            <div class="videos-html">
+                <div id="current_video" class="current-video-html content"><p class = "loading">Loading...</p></div>
+                <div id="list_of_videos" class="all-videos-html content">
+                    <div onclick="onListVideoClick(0)" class="videos">
+                        <div class="video_thumb"></div>
+                        <div class="video_title"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 class="TryYourself">Try It Yourself</h1>
+        <div class="IDE-container">
+            <iframe src="../IDE/ide.html" class="IDE"></iframe>
+        </div>
+        <button class = "takeQuiz" onclick="getQuiz()">Take Quiz !</button>
+    </div>
+
+    
+    
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="row-container1">
+                <div class="row1">
+                    <div class="col1">
+                        <h1>Mentor</h1>
+                        <p>
+                            A108 Adam Street <br>
+                            New York, NY 535022<br>
+                            United States <br><br>
+                            <strong>Phone:</strong> +1 5589 55488 55<br>
+                            <strong>Email:</strong> info@example.com<br>
+                        </p>
+                    </div>
+
+                    <div class="col2">
+                        <h3>Useful Links</h3>
+                        <ul class="inside-col-2">
+                            <li><span style="color: #5fcf80">> </span> <a href="#">Home</a></li>
+                            <li><span style="color: #5fcf80">> </span> <a href="#">About us</a></li>
+                            <li><span style="color: #5fcf80">> </span> <a href="#">Services</a></li>
+                            <li><span style="color: #5fcf80">> </span> <a href="#">Terms of service</a></li>
+                            <li><span style="color: #5fcf80">> </span> <a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col3">
+                        <h3>Our Services</h3>
+                        <ul>
+                            <li><span style="color: #5fcf80">> </span> <a href="#">Web Design</a></li>
+                            <li><span style="color: #5fcf80">> </span> <a href="#">Web Development</a></li>
+                            <li><span style="color: #5fcf80">> </span> <a href="#">Product Management</a></li>
+                            <li><span style="color: #5fcf80">> </span> <a href="#">Marketing</a></li>
+                            <li><span style="color: #5fcf80">> </span> <a href="#">Graphic Design</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col4">
+                        <div class="col4-elements">
+                            <h3>Join Our Newsletter</h3>
+                            <p>Tamen quem nulla quae legam multos aute sint culpa <br> legam noster magna</p>
+                            <form action="" method="post">
+                                <input type="email" name="email">
+                                <input type="submit" value="Subscribe">
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row-container2">
+                <div class="row2">
+                    <div class="copyright">
+                        <p>© Copyright <strong><span>Mentor</span></strong>. All Rights Reserved <br><br>
+                            Designed by <a href="https://bootstrapmade.com/"
+                                style="color: #5fcf80; margin-right: 10px;">BEST PROGRAMMER</a></p>
+                    </div>
+
+                    <div class="social-links">
+
+                        <i class="fa-brands fa-facebook fa-2xl" style="color:#419058;"></i>
+                        <i class="fa-brands fa-square-instagram fa-2xl" style="color:#419058;"></i>
+                        <i class="fa-brands fa-twitter fa-2xl" style="color:#419058;"></i>
+                        <i class="fa-brands fa-skype fa-2xl" style="color:#419058;"></i>
+                        <i class="fa-brands fa-linkedin fa-2xl" style="color:#419058;"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="./courseMaterial.js"></script>
+    <script src="./Quiz.js"></script>
+</body>
+
+</html>
