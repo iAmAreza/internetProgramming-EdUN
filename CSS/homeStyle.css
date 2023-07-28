@@ -9,7 +9,7 @@ body {
   background-color: #ffffff;
 }
 .heading {
-  margin-left: 20rem;
+  margin-left: 10rem;
 }
 .heading-primary {
   padding: 0.5rem;
@@ -30,8 +30,8 @@ body {
 .start-button {
   background-color: #5fcf80;
   color: #ffffff;
-  padding-left: 1.5rem;
-  padding-right: 1.8rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   font-size: 20px;

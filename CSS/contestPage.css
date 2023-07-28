@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.header{
+    background-color: #04aa6d; 
+    height: 100px;
+    width: 100%; 
+    position: relative; 
+} 
+.header-content {
+    position: absolute;
+    text-transform: uppercase;  
+    color: #FFF;  
+    top: 20px; 
+    left: 10px;  
+   
+    
+} 
+.header-content h3{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px; 
+} 
+
+.header-content p {
+    color: purple; 
+    margin-top: -20px;
+    margin-left: 30px;
+} 
+
+
+
+/* Style the dropdown button */
+.dropbtn {
+    background-color:#492e21;
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer; 
+    margin-top: 20px; 
+    border-radius: 3px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    /* position: relative; */ 
+    position: absolute;
+    display: block; 
+    right: 100px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    background-color: #5fcf80 ; 
+    /* min-width: 160px; */ 
+    position: fixed;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.problem-statement{
+    width: 70%; 
+    
+    margin-top: 20px; 
+    height: 700px; 
+    margin-left: 10px;
+} 
+.problem-obj{
+    font-size: 25px;
+} 
+.sample-input{
+    font-size: 25px;
+} 
+.page-change-btn{
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-top: 30px; 
+    margin-bottom: 30px; 
+    gap: 60px;
+} 
+.page-change-btn button{
+    background: #04aa6d; 
+    padding: 20px; 
+    color: #FFF;
+    border-radius: 3px; 
+    width: 100px; 
+    font-size: 20px; 
+    font-weight: bold;
+    
+}
