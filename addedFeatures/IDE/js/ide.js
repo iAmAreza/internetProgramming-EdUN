@@ -3,7 +3,7 @@ window.onload = function () {
     editor = ace.edit("editor");
     editor.setTheme("ace/theme/monokai");
     editor.setOptions({
-        fontSize: "15px" // Set the desired font size here
+        fontSize: "15px", // Set the desired font size here
     });
     editor.session.setMode("ace/mode/html");
     editor.setOption("wrap", true);
