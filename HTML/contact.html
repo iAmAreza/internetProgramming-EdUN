@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../CSS/homeStyle.css" />
     <link rel="stylesheet" href="../CSS/all.min.css" />
     <link rel="stylesheet" href="../CSS/aboutus.css" />
-    <link rel="stylesheet" href="../CSS/contact.css" />
+    <link rel="stylesheet" href="../CSS/contact.css" />  
   </head>
   <body>
     <nav
@@ -114,6 +114,8 @@
       ></iframe>
     </div>
 
+   
+
     <section class="my-address container" data-aos="fade-up">
       <div class="mailing">
         <div class="address-place">
@@ -147,30 +149,34 @@
             
           </div>
         </div>
-
-        <div class="mail-box">
-          <div class="input-box">
-            <input type="text" name="" id="" placeholder="Your Name" />
-            <input type="text" placeholder="Your Email" />
-          </div>
-          <div class="subject-other">
-            <input type="text" name="" id="" placeholder="Subject" />
-            <textarea
-              name=""
-              id=""
-              cols="30"
-              rows="10"
-              placeholder="Message"
-            ></textarea> 
-            <div class="send-message">
-                <button>
-                    Send message
-                </button>
+        <form action="https://formspree.io/f/mqkveked" method="Post">
+          <div class="mail-box">
+            <div class="input-box">
+              <input type="text" name="Name" id="name" placeholder="Your Name" />
+              <input type="text" id="email" name="Email" placeholder="Your Email" />
             </div>
-          </div> 
-        </div>
+            <div class="subject-other">
+              <input type="text" name="Subject" id="subject" placeholder="Subject" />
+              <textarea
+                name="Message"
+                id="message"
+                cols="30"
+                rows="10"
+                placeholder="Message"
+              ></textarea> 
+              <div class="send-message">
+                  <button>
+                      Send message
+                  </button>
+              </div>
+            </div> 
+          </div>
+        </form>
+        
       </div>
     </section>
+ 
+    
 
     <footer id="footer">
         <div class="footer-container">
@@ -257,6 +263,6 @@
         offset: 250,
         duration: 2000,
       });
-    </script>
+    </script> 
   </body>
 </html>
