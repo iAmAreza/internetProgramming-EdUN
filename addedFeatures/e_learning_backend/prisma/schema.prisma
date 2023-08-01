@@ -8,20 +8,53 @@ datasource db {
 }
 
 model User {
-  id       Int      @id @default(autoincrement())
-  email    String   @unique
-  password String
-  profile  Profile? @relation("user profile")
-  courses  Course[]
+  id            Int                  @id @default(autoincrement())
+  email         String               @unique
+  password      String
+  profile       Profile?             @relation("user profile")
+  courses       Course[]
+  problemSolved ContestProblemUser[]
 }
 
-model Profile {
-  id     Int     @id @default(autoincrement())
-  userId Int     @unique
-  user   User    @relation("user profile", fields: [userId], references: [id])
-  name   String
-  age    Int?
-  bio    String?
+model ContestProblemUser {
+  id                   Int            @id @default(autoincrement())
+  source_code          String
+  programming_language String
+  is_accepted          Boolean        @default(false)
+  contest              Contest        @relation(fields: [contestId], references: [id])
+  contestId            Int
+  problem              ContestProblem @relation(fields: [problemId], references: [id])
+  problemId            Int
+  user                 User           @relation(fields: [userId], references: [id])
+  userId               Int
+}
+
+model Contest {
+  id             Int                  @id @default(autoincrement())
+  name           String
+  description    String?
+  start_time     DateTime
+  end_time       DateTime
+  codingProblems ContestProblem[]
+  ContestUser    ContestProblemUser[]
+}
+
+model ContestProblem {
+  id                Int                  @id @default(autoincrement())
+  problem_statement String
+  inputoutput       ContestProblemIO[]
+  contest           Contest              @relation(fields: [contestId], references: [id])
+  contestId         Int
+  userSolved        ContestProblemUser[]
+}
+
+model ContestProblemIO {
+  id               Int            @id @default(autoincrement())
+  is_public        Boolean        @default(true)
+  input            String
+  output           String
+  contestProblem   ContestProblem @relation(fields: [contestProblemId], references: [id])
+  contestProblemId Int
 }
 
 model Course {
@@ -37,7 +70,7 @@ model Course {
 }
 
 model Lesson {
-  id                Int       @id @default(autoincrement())
+  id                Int     @id @default(autoincrement())
   name              String
   youtube_video_url String?
   description       String?
@@ -45,48 +78,15 @@ model Lesson {
   videoDescription  String?
   videoDuration     Int?
   videoThumbnail    String?
-  problems          Problem[]
-  exams             Exam[]
-  contests          Contest[]
   courseId          Int
-  course            Course    @relation(fields: [courseId], references: [id])
+  course            Course  @relation(fields: [courseId], references: [id])
 }
 
-model Problem {
-  id        Int         @id @default(autoincrement())
-  question  String
-  options   String[]
-  answer    Int
-  type      ProblemType // New field for problem type
-  lessonId  Int
-  lesson    Lesson      @relation(fields: [lessonId], references: [id])
-  Exam      Exam?       @relation(fields: [examId], references: [id])
-  examId    Int?
-  Contest   Contest?    @relation(fields: [contestId], references: [id])
-  contestId Int?
-}
-
-model Exam {
-  id          Int       @id @default(autoincrement())
-  name        String
-  description String?
-  date        DateTime
-  problems    Problem[]
-  lessonId    Int
-  lesson      Lesson    @relation(fields: [lessonId], references: [id])
-}
-
-model Contest {
-  id             Int       @id @default(autoincrement())
-  name           String
-  description    String?
-  date           DateTime
-  codingProblems Problem[]
-  lessonId       Int
-  lesson         Lesson    @relation(fields: [lessonId], references: [id])
-}
-
-enum ProblemType {
-  GENERAL
-  CODING
+model Profile {
+  id     Int     @id @default(autoincrement())
+  userId Int     @unique
+  user   User    @relation("user profile", fields: [userId], references: [id])
+  name   String
+  age    Int?
+  bio    String?
 }

@@ -14,6 +14,9 @@ import { QuizController } from "./quiz/quiz.controller";
 import { QuizService } from "./quiz/quiz.service";
 import { AuthMiddleware } from "./common/middleware/auth.middleware";
 import { AuthService } from "./auth/auth.service";
+import { ContestService } from './contest/contest.service';
+import { ContestController } from './contest/contest.controller';
+import { ContestModule } from './contest/contest.module';
 
 @Module({
   imports: [
@@ -24,12 +27,14 @@ import { AuthService } from "./auth/auth.service";
       envFilePath: ".env",
     }),
     CourseModule,
+    ContestModule,
   ],
   controllers: [
     AppController,
     CourseController,
     CodeRunnerController,
     QuizController,
+    ContestController,
   ],
   providers: [
     AuthService,
@@ -37,6 +42,7 @@ import { AuthService } from "./auth/auth.service";
     CourseService,
     CodeRunnerService,
     QuizService,
+    ContestService,
   ],
 })
 export class AppModule {

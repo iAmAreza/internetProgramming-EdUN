@@ -17,6 +17,7 @@ export class AuthMiddleware implements NestMiddleware {
         let { user_data, error } = await this.auth_service.validateToken(
           access_token,
         );
+        // console.log(user_data, error)
         if (error === false) {
           req["user"] = user_data;
         }
