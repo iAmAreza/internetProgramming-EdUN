@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@300;400&display=swap');
+
+*{
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+.running-contest{
+    background-color: #04aa6d ; 
+    height: 150px; 
+    width: 100%;
+} 
+.running-contest h1{
+    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;; 
+    text-align: center; 
+    color: #FFF;
+    padding-top: 50px;
+}  
+
+.contest-list{
+    display: grid; 
+  
+    margin-top: 20px; 
+    margin-left: 30px;
+} 
+.current-contest{
+    border: 1px solid rgba(111, 105, 105, 0.455); 
+    height: 150px; 
+    margin-right: 100px; 
+    border-radius: 3px;
+} 
+li{
+   list-style-type: none;
+} 
+
+.current-content-info{
+    display: grid; 
+    grid-template-columns: repeat(6,1fr);
+} 
+.info{
+    padding: 2px;
+} 
+.info p{
+    margin-top: 5px; 
+    font-family:'Bebas Neue', sans-serif; ;
+    font-weight: bold; 
+    font-size: 18px;
+} 
+.info li{
+    margin-top: 5px; 
+    font-family:'Bebas Neue', sans-serif; ;
+    font-weight: bold; 
+    font-size: 18px;
+} 
+h1{
+    font-family:'Bebas Neue', sans-serif; ;
+}
