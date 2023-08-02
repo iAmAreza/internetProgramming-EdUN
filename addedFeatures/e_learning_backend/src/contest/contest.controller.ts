@@ -1,4 +1,4 @@
-import {Body, Controller, Get, Post, UseGuards} from '@nestjs/common';
+import {Body, Controller, Get, Param, Post, Query, UseGuards} from '@nestjs/common';
 import {ContestService} from "./contest.service";
 import {CreateContestDto} from "./dto/create_contest.dto";
 import {AuthGuard} from "../common/guard/auth.guard";
@@ -11,7 +11,13 @@ export class ContestController {
    async get_all_contest() {
         return await this.contest_service.get_all_contest();
     }
+    @Get("get_scoreboard_of_contest")
+    async get_scoreboard_of_contest(@Query('contest_id') contest_id:string) {
+        // console.log("contest id",contest_id+1);
+        // return contest_id;
+        return await this.contest_service.get_scoreboard_of_contest(contest_id);
 
+    }
     @Get("get_contest_by_id")
     async get_contest_by_id() {}
     @Post("create_contest")

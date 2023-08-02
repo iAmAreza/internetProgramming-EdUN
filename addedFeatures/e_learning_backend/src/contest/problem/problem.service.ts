@@ -169,7 +169,30 @@ export class ProblemService {
             throw new HttpException("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
-
+async get_if_user_solved_problem(problem_id:string,email:string){
+        try{
+            const user_solved_problem = await this.prisma_service.contestProblemUser.findMany({
+                where:{
+                    problemId:Number.parseInt(problem_id),
+                    is_accepted:true,
+                    user:{
+                        email:email
+                    }
+                }
+            })
+            if(user_solved_problem.length>0){
+                return {
+                    message:"Solved"
+                };
+            }
+            return {
+                message:"Not Solved"
+            }
+        }
+    catch (e) {
+        throw new HttpException("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR)
+    }
+}
     async update_problem() {
     }
 

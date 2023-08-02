@@ -1,4 +1,4 @@
-import {Body, Controller, Get, Post, Req, UseGuards} from '@nestjs/common';
+import {Body, Controller, Get, Post, Query, Req, UseGuards} from '@nestjs/common';
 import {ProblemService} from "./problem.service";
 import {GetProblemsOfContestDto} from "./dto/get_problem_of_contest.dto";
 import {CreateProblemDto} from "./dto/create_problem.dto";
@@ -13,7 +13,10 @@ export class ProblemController {
     @Post("get_all_problem_of_contest")
     async get_all_problem_of_contest(@Body() get_problem_of_contest_dto:GetProblemsOfContestDto) {
         return await this.problem_service.get_all_problem_of_contest(get_problem_of_contest_dto);
-
+    }
+    @Get("get_if_user_solved_problem")
+    async get_if_user_solved_problem(@Query('problem_id') problem_id:string,@Req() req:Request) {
+        return await this.problem_service.get_if_user_solved_problem(problem_id,req['user']['email']);
     }
     @Get("get_problem_by_id")
     async get_problem_by_id() {}

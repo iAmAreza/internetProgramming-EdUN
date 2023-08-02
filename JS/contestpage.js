@@ -51,20 +51,55 @@ let problem_idx;
                 return;
             }
             const statement_of_problem = document.getElementById("statement_of_problem");
-            statement_of_problem.innerHTML =`<h1>Problem Statement</h1>`+ responseData['codingProblems'][0]['problem_statement'];
+            statement_of_problem.innerHTML =`<h1>Problem Statement</h1>`+ responseData['codingProblems'][problem_idx-1]['problem_statement'];
             const sample_input = document.getElementById("sample_input");
-            sample_input.innerHTML = `<h1>Input</h1><p class="sample-input">${responseData['codingProblems'][0]['inputoutput'][0]['input']}</p>`;
+            sample_input.innerHTML = `<h1>Input</h1><p class="sample-input">${responseData['codingProblems'][problem_idx-1]['inputoutput'][0]['input']}</p>`;
             const sample_output = document.getElementById("sample_output");
-            sample_output.innerHTML = `<h1>Output</h1><p class="sample-input">${responseData['codingProblems'][0]['inputoutput'][0]['output']}</p>`;
+            sample_output.innerHTML = `<h1>Output</h1><p class="sample-input">${responseData['codingProblems'][problem_idx-1]['inputoutput'][0]['output']}</p>`;
 
+        } else {
+            window.open(document.location.origin + '/HTML/signup.html', "_self");
+        }
+        show_if_problem_is_solved();
+    } catch (error) {
+        console.log(error);
+    }
+})()
+async function show_if_problem_is_solved(){
+    try {
+        const queryString = window.location.search;
+        // console.log(queryString);
+        const urlParams = new URLSearchParams(queryString);
+         contest_id = urlParams.get('contest_id');
+         problem_idx = urlParams.get('problem_idx');
+        if (!contest_id || !problem_idx) {
+            window.open(document.location.origin + `/HTML/contestPage.html`, "_self");
+            return;
+        }
+        let url = `http://localhost:3000/problem/get_if_user_solved_problem?problem_id=${global_response_data.codingProblems[Number.parseInt(problem_idx)-1].id}`;
+        let access_token = localStorage.getItem("access_token");
+
+        if (access_token) {
+            const auth_header = 'Bearer ' + access_token;
+            const res = await fetch(url, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + access_token.replace(/["]+/g, '')
+                }
+            })
+            const responseData = await res.json();
+            console.log(responseData);
+            if(responseData['message']==="Solved"){
+                show_feedback_modal(" Congratulation ","You have already solved this problem");
+            }
         } else {
             window.open(document.location.origin + '/HTML/signup.html', "_self");
         }
     } catch (error) {
         console.log(error);
-    }
-})()
-
+    } 
+}
 function show_feedback_modal(title,message){
     let modal_message = document.getElementById("modal_message");
     let modal_title = document.getElementById("modal_title");
