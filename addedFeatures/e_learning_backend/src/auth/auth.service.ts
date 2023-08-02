@@ -33,7 +33,9 @@ export class AuthService {
       return {
         id: user.id,
         email: user.email,
-        access_token: await this.jwtService.signAsync(payload),
+        access_token: await this.jwtService.signAsync(payload,{
+          secret: constants.jwtConstants.secret,
+        }),
       };
     } catch (error) {
       //return error;
@@ -108,11 +110,12 @@ export class AuthService {
   }
 
   async validateToken(token: string) {
-    // console.log("token", token);
+    console.log( token);
     try {
       const user_data = await this.jwtService.verifyAsync(token, {
         secret: constants.jwtConstants.secret,
       });
+
       return {
         user_data: user_data,
         error: false,

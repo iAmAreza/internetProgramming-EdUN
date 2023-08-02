@@ -1,5 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+
+.problem{
+    display: flex;
+}
+#problem-statement{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-basis: 50%;
+    /* width: 70%;  */
+    margin-top: 20px; 
+    height: 700px; 
+    margin-left: 10px;
+}
+
+
+#code_editor{
+    flex-basis: 50%;
+}
+.pagination {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  .pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #ddd;}
 .header{
     background-color: #04aa6d; 
     height: 100px;
@@ -78,13 +118,7 @@
     display: block;
 }
 
-.problem-statement{
-    width: 70%; 
-    
-    margin-top: 20px; 
-    height: 700px; 
-    margin-left: 10px;
-} 
+ 
 .problem-obj{
     font-size: 25px;
 } 

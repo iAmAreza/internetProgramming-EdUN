@@ -1,67 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contest</title> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> 
-    <link rel="stylesheet" href="../CSS/contestPage.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contest</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../CSS/contestPage.css" />
+    <link rel="stylesheet" href="../addedFeatures/IDE/css/style.css" />
+  </head>
+  <body>
     <div class="header">
-        <div class="header-content">
-            <h3>online-contest</h3> 
-            <p><small>Powerd by "EDUN"</small></p>
-        </div> 
-        <div class="dropdown">
-            <button class="dropbtn">Select your language</button>
-            <div class="dropdown-content">
-                <a href="#" onclick="selectItem('C++')">C++</a>
-                <a href="#" onclick="selectItem('Java script')">Java Script</a>
-                <a href="#" onclick="selectItem('Python')">Python</a>
-                <!-- Add more items here if needed -->
-            </div>
-        </div>
-    </div> 
-
-    <div class="problem-statement">
-        <h4>Problem Statement</h4> 
-        <p style="font-size: 18px;"> <b> Timelimit: 1ms </b></p> 
-        <p class="problem-obj">
-            Write a program that reads an employee's number, his/her worked hours number in a month and the amount he received per hour. Print the employee's number and salary that he/she will receive at end of the month, with two decimal places.Don’t forget to print the line's end after the result, otherwise you will receive “Presentation Error”.Don’t forget the space before and after the equal signal and after the U$.
-        </p> 
-        <h1>Input</h1>
-        <p class="sample-input">
-            The input file contains 2 integer numbers and 1 value of floating point, representing the number, worked hours amount and the amount the employee receives per worked hour. <br>
-            <b style="margin-top: 10px;">Samples</b>
-            <h3>
-                25 <br>
-                100 <br>
-                5.50
-            </h3>
-        </p> 
-        <h1>Output Samples</h1> 
-        <h3>
-            NUMBER = 25  <br>
-            SALARY = U$ 550.00
-        </h3>
+      <div class="header-content">
+        <h3>online-contest</h3>
+        <p><small>Powerd by "EDUN"</small></p>
+      </div>
     </div>
 
-   <div class="page-change-btn">
-       <div class="back">
-        <button>Back</button>
-       </div> 
-       <div class="next">
-        <button>Next</button>
-       </div>
-   </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal_title">...</h5>
+        <button type="button" onclick="close_modal()" class="btn-close"></button>
+      </div>
+      <div id="modal_message" class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" onclick="close_modal()" class="btn btn-primary">Okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="problem">
+      <div id="problem-statement">
+        <p class="problem-obj" id="statement_of_problem">
+        </p>
+        <div id="sample_input">
+        </div>
+        <div id="sample_output">
+        </div>
+      </div>
+      <div id="code_editor">
+        <div class="container">
+          <div>
+            <button id="run" onclick="runCode()">Run</button>
+            <button id="run" onclick="submitCode()">Submit</button>
+            <div class="control-panel">
+              Select Language: &nbsp; &nbsp;
+              <select
+                id="languages"
+                class="languages"
+                onchange="changeLanguage()"
+              >
+                <option value="c">C</option>
+                <option value="cpp17">C++</option>
+                <option value="php">PHP</option>
+                <option value="python3">Python</option>
+                <option value="nodejs">Node JS</option>
+              </select>
+            </div>
+          </div>
+          <div class="inOut toggle">
+            <div class="editor toggle-editor" id="editor"></div>
+            <div class="output toggle-output">
+              <p id="output"></p>
+            </div>
+          </div>
+        </div>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+        <script src="./../addedFeatures/IDE/js/lib/ace.js"></script>
+        <script src="./../addedFeatures/IDE/js/lib/theme-monokai.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="./../addedFeatures/IDE/js/ide.js"></script>
+        <script src="./../JS/contestpage.js"></script>
+      </div>
+    </div>
+    <div class="pagination" id="pagination">
 
-
-
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script>
-        function selectItem(item) {
-            document.querySelector('.dropbtn').innerText = item;
-        }
+      function selectItem(item) {
+        document.querySelector(".dropbtn").innerText = item;
+      }
     </script>
-</body>
+  </body>
 </html>
