@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./courseMaterial.css">
-    <link rel="stylesheet" href= "Quiz.css">
+    <link rel="stylesheet" href="./Quiz.css">
 </head>
 
-<body onload="on_course_page_load()">
+<body onload="loadLast()">
+
     <header>
         <nav>
             <li class="logo"><a href="#">EdUn</a></li>
@@ -27,55 +28,48 @@
     </header>
     <div class="course-topic">
         <ul class="topic-list">
-            <li onclick = "getCurrent(this)"><a class="topic"
-                    href="http://127.0.0.1:5500/IP/CourseMaterial/courseMaterial.html?course_id=PLm64fbD5OnxuObyOVSxcM0TUcBLDF2w64">HTML</a>
+            <li onclick="getCurrent(this)">HTML
             </li>
-            <li onclick = "getCurrent(this)"><a class="topic"
-                    href="http://127.0.0.1:5500/IP/CourseMaterial/courseMaterial.html?course_id=PLm64fbD5Onxvj4aifOC8P8U8inUqWzdSH">CSS</a>
+            <li onclick="getCurrent(this)">CSS
             </li>
-            <li onclick = "getCurrent(this)"><a class="topic" 
-                    href="http://127.0.0.1:5500/IP/CourseMaterial/courseMaterial.html?
-                    course_id=PLHiZ4m8vCp9OkrURufHpGUUTBjJhO9Ghy">Javascript</a></li>
-            <li onclick = "getCurrent(this)"><a class="topic"
-                    href="http://127.0.0.1:5500/IP/CourseMaterial/courseMaterial.html?course_id=PLHiZ4m8vCp9M6HVQv7a36cp8LKzyHIePr">React</a>
+            <li onclick="getCurrent(this)">Javascript
             </li>
-            <li onclick = "getCurrent(this)"><a class="topic"
-                    href="http://127.0.0.1:5500/IP/CourseMaterial/courseMaterial.html?course_id=PL4cUxeGkcC9h77dJ-QJlwGlZlTd4ecZOA">MongoDB</a>
+            <li onclick="getCurrent(this)">React
             </li>
-            <li onclick = "getCurrent(this)"><a class="topic"
-                    href="http://127.0.0.1:5500/IP/CourseMaterial/courseMaterial.html?course_id=PLHiZ4m8vCp9PHnOIT7gd30PCBoYCpGoQM">NodeJS</a>
+            <li onclick="getCurrent(this)">MongoDB
             </li>
-            <li onclick = "getCurrent(this)"><a class="topic"
-                    href="http://127.0.0.1:5500/IP/CourseMaterial/courseMaterial.html?course_id=PLwGdqUZWnOp3Vqww2cL5KbDkShj4NMRzk">ExpressJS</a>
+            <li onclick="getCurrent(this)">NodeJS
+            </li>
+            <li onclick="getCurrent(this)">ExpressJS
             </li>
         </ul>
     </div>
-    
-    
-    
-    <div class = "content-box">
-        <div class="video-container">
-            <h1 id="course_title" class="heading1 heading"></h1>
 
-            <div class="videos-html">
-                <div id="current_video" class="current-video-html content"><p class = "loading">Loading...</p></div>
-                <div id="list_of_videos" class="all-videos-html content">
-                    <div onclick="onListVideoClick(0)" class="videos">
-                        <div class="video_thumb"></div>
-                        <div class="video_title"></div>
-                    </div>
+
+
+    <div class="content-box">
+        <div class="video-container">
+            <div class="current-video">
+                <p class="course-name"></p>
+                <video width="750" height="420" controls class="video">
+                    <source src="" type="video/mp4">
+                </video>
+                <p class="video-name"></p>
+                <div class="change-video-button-container">
+                    <button class="change-video-button prev" onclick="changeVideo(this)">Prev</button>
+                    <button class="change-video-button next" onclick="changeVideo(this)">Next</button>
                 </div>
             </div>
         </div>
-        <h1 class="TryYourself">Try It Yourself</h1>
+        <button class="takeQuiz" onclick="gotoQuizPage('./Quiz.html')">Take Quiz !</button>
+        <button class="CodeNow" onclick = "toggleEditor()">Code Now</button>
         <div class="IDE-container">
             <iframe src="../IDE/ide.html" class="IDE"></iframe>
         </div>
-        <button class = "takeQuiz" onclick="getQuiz()">Take Quiz !</button>
     </div>
 
-    
-    
+
+
     <footer id="footer">
         <div class="footer-container">
             <div class="row-container1">
@@ -150,7 +144,6 @@
     </footer>
 
     <script src="./courseMaterial.js"></script>
-    <script src="./Quiz.js"></script>
 </body>
 
 </html>
