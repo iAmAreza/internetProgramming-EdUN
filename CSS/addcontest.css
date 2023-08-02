@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@300;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.upcoming-contest {
+  background-color: #04aa6d;
+  height: 150px;
+  width: 100%;
+}
+.upcoming-contest h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
+  text-align: center;
+  color: #fff;
+  padding-top: 50px;
+}
+.contest-list {
+  display: grid;
+
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.current-contest {
+  border: 1px solid rgba(111, 105, 105, 0.455);
+  height: 150px;
+  margin-right: 100px;
+  border-radius: 3px;
+  margin-top: 10px;
+  padding: 10px;
+}
+li {
+  list-style-type: none;
+}
+
+.current-content-info {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.info {
+  padding: 2px;
+}
+.info p {
+  margin-top: 5px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+}
+.info li {
+  margin-top: 5px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+}
+h1 {
+  font-family: "REM", sans-serif;
+}
+
+.add-contest button{
+    margin-top: 20px; 
+    margin-right: 30px;
+} 
+button{
+    display: block; 
+    width: 1580px; 
+    background-color: #36dfa1; 
+    color: #FFF; 
+    padding: 20px;  
+    font-size: 20px; 
+    font-weight: bold; 
+    font-family: "Roboto Condensed", sans-serif;
+    cursor: pointer;
+} 

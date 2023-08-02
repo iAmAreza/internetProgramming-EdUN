@@ -1,22 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@300;400&display=swap"); 
+@import url('https://fonts.googleapis.com/css2?family=REM:wght@300;400&display=swap');
 
-*{
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.running-contest{
-    background-color: #04aa6d ; 
-    height: 150px; 
-    width: 100%;
-} 
-.running-contest h1{
-    font-family: 'Bebas Neue', sans-serif;
-    font-family: 'Roboto Condensed', sans-serif;; 
-    text-align: center; 
-    color: #FFF;
-    padding-top: 50px;
-}  
+.running-contest {
+  background-color: #04aa6d;
+  height: 150px;
+  width: 100%;
+}
+.running-contest h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
+  text-align: center;
+  color: #fff;
+  padding-top: 50px;
+}
+
 
 .contest-list{
     /* display: grid;  */
