@@ -19,7 +19,7 @@
 }  
 
 .contest-list{
-    display: grid; 
+    /* display: grid;  */
   
     margin-top: 20px; 
     margin-left: 30px;
@@ -29,17 +29,33 @@
     height: 150px; 
     margin-right: 100px; 
     border-radius: 3px;
+    /* display: flex; */
+    /* justify-content: space-around; */
+
 } 
 li{
    list-style-type: none;
 } 
 
 .current-content-info{
-    display: grid; 
-    grid-template-columns: repeat(6,1fr);
+    width: 100%;
+    display: flex; 
+    justify-content: space-around;
+    /* grid-template-columns: repeat(4,1fr); */
 } 
 .info{
     padding: 2px;
+} 
+.info a{
+    text-decoration: none;
+    margin-top: 5px; 
+    font-family:'Bebas Neue', sans-serif; ;
+    font-weight: bold; 
+    font-size: 18px;
+} 
+.info a:hover{
+    z-index: 1;
+    color: #04aa6d;
 } 
 .info p{
     margin-top: 5px; 
