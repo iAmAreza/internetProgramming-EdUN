@@ -13,7 +13,7 @@
 }
 
 #run {
-    background-color: #04AA6D;
+    background-color:#5fcf80;
     color: white;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 18px;
@@ -21,11 +21,13 @@
     border: none;
     border-radius: 5px;
     word-spacing: 10px;
-    margin-left: 10px;
     cursor: pointer;
     margin-top: 15px;
+    transition: 0.3s;
 }
-
+#run:hover{
+    background: #3ac162;
+}
 #tilt {
     border: none;
     cursor: pointer;
@@ -47,9 +49,13 @@
 /* .container {
     background-color: #E8E8E8;
 } */
-
+.buttons{
+    margin: 0.5em 1em;
+}
 .inOut{
     display: flex;
+    margin: 0 auto;
+    width: 98%;
     justify-content: space-between;
     padding: 5px 10px 20px 10px;
 }
@@ -58,9 +64,9 @@
     border: 1px solid gray;
 } */
 .editor, .output {
-    height: 85vh;
+    height: 80vh;
     width: 49%;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.419) 0px 5px 15px;
 }
 .output {
     background-color: white;
